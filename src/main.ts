@@ -15,6 +15,14 @@ button.textContent = 'add todo'
 app.appendChild(button)
 console.log(button);
 
+
+button.addEventListener('click', () =>{
+  const li = document.createElement('li')
+  li.textContent = input.value
+  list.appendChild(li)
+  
+})
+
 const list = document.createElement('ul');
 app.appendChild(list);
 console.log(list);
