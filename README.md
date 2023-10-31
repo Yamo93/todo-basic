@@ -3,7 +3,7 @@
 ## Requirements
 
 1. Add a todo
-2. Remove a todo
+2. Remove a todo. Confirm that the user wants to remove.
 3. Update a todo
 4. List todos
 5. Add a description for a todo
@@ -16,4 +16,5 @@
 12. Move a todo between columns
 13. Save todos to local storage
 14. Read todos from local storage
+
 
