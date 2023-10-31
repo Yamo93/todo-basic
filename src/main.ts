@@ -1,17 +1,20 @@
 import './style.css';
 
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-  <div>
-   <ul id="todo-list">
-     <li>Göra läxan</li>  
-   </ul>
-  </div>
-`;
+const app = document.querySelector<HTMLDivElement>('#app');
 
-const input = document.createElement("input")
-input.setAttribute("type", "text")
+if (!app) throw new Error('App element is missing');
 
+const input = document.createElement('input');
+input.setAttribute('type', 'text');
+app.appendChild(input)
+console.log(input);
 
+const button = document.createElement('button');
+button.setAttribute('type', 'button');
+button.textContent = 'add todo'
+app.appendChild(button)
+console.log(button);
 
-const list = document.querySelector<HTMLLIElement>('#todo-list');
+const list = document.createElement('ul');
+app.appendChild(list);
 console.log(list);
