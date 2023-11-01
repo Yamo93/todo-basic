@@ -40,9 +40,13 @@ button.addEventListener('click', () => {
     updateButton.addEventListener('click', () => {
         const todoUpdate = prompt('Update your todo');
 
-        if (todoUpdate === null || todoUpdate === '') {
-            alert('du måste skriva in något');
-        } else {
+        if (todoUpdate === null) {
+          return
+            
+        } else if (todoUpdate === ''){
+          alert('You must enter a value')
+        }
+        else {
           li.textContent = todoUpdate
           li.appendChild(removeButton)
           li.appendChild(updateButton)
