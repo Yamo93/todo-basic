@@ -19,7 +19,10 @@ const list = document.createElement('ul');
 app.appendChild(list);
 console.log(list);
 
+let todo: (string | null)[] = []
+
 button.addEventListener('click', () => {
+    todo.push(input.value);
     const li = document.createElement('li');
     li.textContent = input.value;
     list.appendChild(li);
@@ -31,25 +34,29 @@ button.addEventListener('click', () => {
     updateButton.setAttribute('type', 'button');
     updateButton.textContent = 'Update todo';
     li.appendChild(updateButton);
+    input.value = ''
 
     removeButton.addEventListener('click', () => {
         if (confirm('Do you want to delete this task')) {
             li.remove();
+
+            const deleteArray = todo.indexOf(li.textContent)
+            if (deleteArray > -1) {
+              todo.splice(deleteArray, 1);
+          }
         }
     });
     updateButton.addEventListener('click', () => {
         const todoUpdate = prompt('Update your todo');
 
         if (todoUpdate === null) {
-          return
-            
-        } else if (todoUpdate === ''){
-          alert('You must enter a value')
-        }
-        else {
-          li.textContent = todoUpdate
-          li.appendChild(removeButton)
-          li.appendChild(updateButton)
+            return;
+        } else if (todoUpdate === '') {
+            alert('You must enter a value');
+        } else {
+            li.textContent = todoUpdate;
+            li.appendChild(removeButton);
+            li.appendChild(updateButton);
         }
     });
 });
