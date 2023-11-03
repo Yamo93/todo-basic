@@ -38,7 +38,7 @@ button.addEventListener('click', () => {
     addDescription.setAttribute('type', 'button');
     addDescription.textContent = 'Description todo';
     li.appendChild(addDescription);
-    
+
     
     input.value = ''
 
@@ -84,4 +84,10 @@ button.addEventListener('click', () => {
     }
     })
 
+    li.addEventListener('click',()=>{
+        li.style.textDecoration = 'line-through'
+    })
+
+    
+   
 });
