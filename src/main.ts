@@ -63,6 +63,7 @@ button.addEventListener('click', () => {
             li.textContent = todoUpdate;
             li.appendChild(removeButton);
             li.appendChild(updateButton);
+            li.appendChild(addDescription)
         }
     });
      
